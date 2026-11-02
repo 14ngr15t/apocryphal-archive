@@ -7,18 +7,13 @@ A love letter to the Web 1.0 era of **GeoCities**, **Angelfire**, and classic ta
 ## ⚡ Quick Start
 - **Public 90s Shrine:** Double-click **`index.html`** or **`OPEN_RETRO_SHRINE.bat`** to view your public GeoCities/Angelfire book archive!
 - **Collection Admin Database:** Double-click **`admin.html`** or **`OPEN_ADMIN_DATABASE.bat`** (or click the *"[🔑 DM Collection Database]"* link in the shrine) to launch the password-protected **Microsoft Access 97 / Windows 95** management tool!
-  - **Username:** `Ian`
-  - **Password:** `R3d1in3d`
+
 - **Zero build steps, zero node/npm dependencies, zero external assets.** Runs 100% locally and offline in any modern web browser.
 
 ---
 
 ## 🗃️ Backend & Collection Admin Interface (Password Protected)
-The admin console ([`admin.html`](file:///e:/Users/iangr/Documents/KEEP/AI%20Projects/retro-rpg-shelf/admin.html)) is protected with a Windows 95 Workgroup Logon dialog requiring:
-* **Username:** `Ian`
-* **Password:** `R3d1in3d`
-* **Features:** Session persistence, "Save password" checkbox, incorrect login buzzers & warning dialogs, and a one-click `[ 🔒 Logoff ]` button.
-The admin console ([`admin.html`](file:///e:/Users/iangr/Documents/KEEP/AI%20Projects/retro-rpg-shelf/admin.html)) provides a full database environment tailored for logging your physical RPG collection:
+
 * **Master-Detail Navigation:** Browse, search, and jump across your entire collection with live thumbnails and record counters (`Record: 1 of 19`).
 * **Four Dedicated Form Tabs:**
   1. **Book Info & System:** Title, Game System/Ruleset, Category filter, Year Published, Publisher, Cover Artist, Rarity (1–5 Stars), and Badge text (*"HOLY GRAIL"*, *"1ST PRINT"*).
