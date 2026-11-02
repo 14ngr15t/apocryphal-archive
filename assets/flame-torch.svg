@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 120" width="60" height="120">
+  <defs>
+    <style>
+      .flame1 { animation: flameFlicker1 0.4s infinite alternate ease-in-out; transform-origin: 30px 70px; }
+      .flame2 { animation: flameFlicker2 0.3s infinite alternate ease-in-out; transform-origin: 30px 60px; }
+      .flame3 { animation: flameFlicker3 0.25s infinite alternate ease-in-out; transform-origin: 30px 50px; }
+      .spark { animation: sparkFly 0.8s infinite linear; }
+      @keyframes flameFlicker1 {
+        0% { transform: scale(0.9, 0.95) skewX(-3deg); fill: #ff2200; }
+        100% { transform: scale(1.1, 1.05) skewX(4deg); fill: #ff4500; }
+      }
+      @keyframes flameFlicker2 {
+        0% { transform: scale(1.05, 0.9) skewX(4deg); fill: #ff8800; }
+        100% { transform: scale(0.95, 1.1) skewX(-3deg); fill: #ffa500; }
+      }
+      @keyframes flameFlicker3 {
+        0% { transform: scale(0.9, 1.1); fill: #ffff00; }
+        100% { transform: scale(1.1, 0.85); fill: #ffffff; }
+      }
+      @keyframes sparkFly {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateY(-40px) translateX(8px) scale(0.2); opacity: 0; }
+      }
+    </style>
+    <radialGradient id="torchGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffbb00" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#ff4400" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle cx="30" cy="50" r="30" fill="url(#torchGlow)"/>
+
+  <!-- Sparks -->
+  <circle cx="28" cy="35" r="2" fill="#ffff88" class="spark" style="animation-duration: 0.7s;"/>
+  <circle cx="32" cy="38" r="1.5" fill="#ffaa00" class="spark" style="animation-duration: 0.9s; animation-delay: 0.3s;"/>
+
+  <!-- Outer Flame (Red/Dark Orange) -->
+  <path class="flame1" d="M30 10 C15 35 10 55 20 70 C24 75 36 75 40 70 C50 55 45 35 30 10 Z" />
+
+  <!-- Mid Flame (Bright Orange) -->
+  <path class="flame2" d="M30 22 C20 40 18 56 24 67 C27 71 33 71 36 67 C42 56 40 40 30 22 Z" />
+
+  <!-- Core Flame (Yellow/White) -->
+  <path class="flame3" d="M30 35 C24 48 23 58 27 65 C29 67 31 67 33 65 C37 58 36 48 30 35 Z" />
+
+  <!-- Torch Sconce / Wooden Handle -->
+  <!-- Metal bowl -->
+  <polygon points="18,70 42,70 38,82 22,82" fill="#555" stroke="#222" stroke-width="1.5"/>
+  <rect x="20" y="70" width="20" height="3" fill="#888"/>
+  <!-- Iron banding rings -->
+  <rect x="25" y="82" width="10" height="35" fill="#5a3d28" stroke="#1f140e" stroke-width="1.5"/>
+  <rect x="24" y="88" width="12" height="3" fill="#777" stroke="#333" stroke-width="0.5"/>
+  <rect x="24" y="99" width="12" height="3" fill="#777" stroke="#333" stroke-width="0.5"/>
+  <!-- Base mount ring -->
+  <circle cx="30" cy="115" r="4" fill="#333" stroke="#888" stroke-width="1"/>
+</svg>

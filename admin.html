@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Access 97 - [TTRPG_COLLECTION.MDB : Form]</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Windows 95 Logon Modal Dialog (Password Protected) -->
+  <div id="admin-login-overlay" class="login-overlay">
+    <div class="win95-window login-window">
+      <div class="win95-titlebar">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span>🔑</span>
+          <span>Enter Network Password</span>
+        </div>
+        <a href="index.html" class="win95-close-btn" style="text-decoration: none;" title="Cancel & Return to Public Shrine">✕</a>
+      </div>
+
+      <div class="login-dialog-body">
+        <div class="login-banner-row">
+          <div class="login-key-icon">🗝️</div>
+          <div class="login-instruction-text">
+            Type a user name and password to log on to the <strong>TTRPG_COLLECTION</strong> database workgroup.
+          </div>
+        </div>
+
+        <form id="admin-login-form">
+          <div class="login-fields-box">
+            <div class="login-field-row">
+              <label for="login-username" class="login-label"><u>U</u>ser name:</label>
+              <input type="text" id="login-username" class="win95-input login-input" value="Ian" autocomplete="username" autofocus required>
+            </div>
+            <div class="login-field-row">
+              <label for="login-password" class="login-label"><u>P</u>assword:</label>
+              <input type="password" id="login-password" class="win95-input login-input" autocomplete="current-password" placeholder="Enter password..." required>
+            </div>
+            <div class="login-field-row">
+              <label class="login-label"><u>D</u>atabase:</label>
+              <input type="text" class="win95-input login-input" value="TTRPG_COLLECTION.MDB" disabled style="background: #d4d0c8; color: #555;">
+            </div>
+          </div>
+
+          <div class="login-checkbox-row" style="margin-top: 10px;">
+            <label style="cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 11px;">
+              <input type="checkbox" id="login-remember">
+              <span>Save this password in your password list</span>
+            </label>
+          </div>
+
+          <div id="login-error-msg" class="login-error-alert" style="display: none;">
+            ⚠️ <strong>Logon Denied:</strong> Invalid User name or Password. Verify credentials and try again.
+          </div>
+
+          <div class="login-button-row">
+            <button type="submit" class="win95-btn login-btn" id="login-submit-btn">OK</button>
+            <a href="index.html" class="win95-btn login-btn" style="text-decoration: none; text-align: center;">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Windows 95 Top Window Frame -->
+  <div class="win95-app-container" style="display: none;">
+    
+    <!-- Titlebar -->
+    <div class="win95-titlebar app-titlebar">
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 14px;">🗃️</span>
+        <span>Microsoft Access - [TTRPG_COLLECTION : Form - Book Entry]</span>
+      </div>
+      <div style="display: flex; gap: 3px;">
+        <button class="win95-sys-btn" title="Minimize">_</button>
+        <button class="win95-sys-btn" title="Maximize">□</button>
+        <a href="index.html" class="win95-sys-btn" style="text-decoration: none; color: #000; line-height: 14px;" title="Exit to Public Shrine">✕</a>
+      </div>
+    </div>
+
+    <!-- Access 97 Menu Bar -->
+    <div class="access-menu-bar">
+      <span><u>F</u>ile</span>
+      <span><u>E</u>dit</span>
+      <span><u>V</u>iew</span>
+      <span><u>I</u>nsert</span>
+      <span><u>F</u>ormat</span>
+      <span><u>R</u>ecords</span>
+      <span><u>T</u>ools</span>
+      <span><u>W</u>indow</span>
+      <span><u>H</u>elp</span>
+    </div>
+
+    <!-- Access 97 Icon Toolbar -->
+    <div class="access-toolbar">
+      <button class="win95-btn toolbar-btn" id="tb-new-btn" title="Add New Book Record">
+        ➕ New Tome
+      </button>
+      <button class="win95-btn toolbar-btn" id="tb-save-btn" title="Save Current Record">
+        💾 Save Record
+      </button>
+      <button class="win95-btn toolbar-btn" id="tb-delete-btn" title="Delete Current Record" style="color: #990000;">
+        🗑 Delete
+      </button>
+      <span class="toolbar-sep">|</span>
+      <button class="win95-btn toolbar-btn" id="tb-export-json-btn" title="Export Collection to JSON Backup">
+        📁 Export JSON
+      </button>
+      <label class="win95-btn toolbar-btn" style="cursor: pointer;" title="Import Collection from JSON Backup">
+        📥 Import JSON
+        <input type="file" id="tb-import-json-input" accept=".json" style="display: none;">
+      </label>
+      <button class="win95-btn toolbar-btn" id="tb-export-js-btn" title="Download updated books-data.js file to replace project file">
+        📜 Download books-data.js
+      </button>
+      <span class="toolbar-sep">|</span>
+      <button class="win95-btn toolbar-btn" id="tb-reset-btn" title="Restore Default 19 Books">
+        ↩ Reset Defaults
+      </button>
+      <span class="toolbar-sep">|</span>
+      <button class="win95-btn toolbar-btn" id="tb-logoff-btn" title="Lock & Log Off from Database" style="color: #990000;">
+        🔒 Logoff
+      </button>
+      <span style="font-size: 10px; color: #000080; margin-left: 4px; font-weight: bold;">
+        User: <span id="current-user-badge">Ian</span>
+      </span>
+      <a href="index.html" class="win95-btn toolbar-btn" style="text-decoration: none; margin-left: auto; background: #000080; color: #ffff00;">
+        🏰 View Public Shrine &gt;&gt;
+      </a>
+    </div>
+
+    <!-- Main Workspace (Master-Detail Split) -->
+    <div class="access-workspace">
+
+      <!-- Left Sidebar: Records Navigator -->
+      <aside class="records-sidebar">
+        <div class="sidebar-header-box">
+          <label style="font-weight: bold; font-size: 11px;">Search Records:</label>
+          <input type="text" id="admin-search-input" class="win95-input" placeholder="Filter title, system..." style="width: 100%; margin-top: 2px;">
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+            <span id="record-count-badge" style="font-size: 11px; font-weight: bold; color: #000080;">19 Records</span>
+            <button class="win95-btn" id="admin-add-quick-btn" style="font-size: 10px; padding: 1px 6px;">+ New</button>
+          </div>
+        </div>
+
+        <!-- Scrollable Book List -->
+        <div class="records-list" id="admin-records-list">
+          <!-- Populated by admin.js -->
+        </div>
+      </aside>
+
+      <!-- Center & Right: Form Detail Editor & Live Preview -->
+      <main class="form-editor-container">
+        
+        <!-- Form Navigation Header -->
+        <div class="form-header-bar">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-weight: bold; color: #000080;">Record:</span>
+            <button class="win95-btn nav-arrow-btn" id="nav-first" title="First Record">&lt;&lt;</button>
+            <button class="win95-btn nav-arrow-btn" id="nav-prev" title="Previous Record">&lt;</button>
+            <input type="text" id="current-record-num" class="win95-input" value="1" style="width: 32px; text-align: center;">
+            <span>of <strong id="total-record-num">19</strong></span>
+            <button class="win95-btn nav-arrow-btn" id="nav-next" title="Next Record">&gt;</button>
+            <button class="win95-btn nav-arrow-btn" id="nav-last" title="Last Record">&gt;&gt;</button>
+          </div>
+          <div id="form-status-msg" style="font-size: 11px; color: #006600; font-weight: bold;">
+            Editing Record
+          </div>
+        </div>
+
+        <div class="form-preview-split">
+
+          <!-- Entry Form Tabs -->
+          <div class="form-panel">
+            <div class="win95-tabs">
+              <div class="win95-tab active" data-tab="tab-basic">1. Book Info</div>
+              <div class="win95-tab" data-tab="tab-collection">2. Collection Log &amp; Dates</div>
+              <div class="win95-tab" data-tab="tab-lore">3. Lore &amp; Rules</div>
+              <div class="win95-tab" data-tab="tab-image">4. Cover Image</div>
+            </div>
+
+            <!-- Tab Content Wrapper -->
+            <div class="win95-tab-content-box" style="padding: 12px; background: #c0c0c0;">
+              
+              <form id="book-edit-form">
+                <input type="hidden" id="field-id">
+
+                <!-- TAB 1: BASIC INFO -->
+                <div class="admin-tab-pane" id="tab-basic">
+                  <div class="form-grid-2">
+                    <div class="admin-field-group">
+                      <label class="admin-label">Book Title: *</label>
+                      <input type="text" id="field-title" class="win95-input" required placeholder="e.g. Advanced D&amp;D: Player's Handbook">
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Category Filter: *</label>
+                      <select id="field-category" class="win95-select">
+                        <option value="add1e">AD&amp;D 1st Edition</option>
+                        <option value="add2e">AD&amp;D 2nd Edition &amp; Settings</option>
+                        <option value="basic">D&amp;D Basic / BECMI</option>
+                        <option value="nontsr">Non-TSR Classic RPGs</option>
+                        <option value="custom">Other / Custom Setting</option>
+                      </select>
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Game System / Ruleset: *</label>
+                      <input type="text" id="field-system" class="win95-input" placeholder="e.g. AD&amp;D 1st Edition, BRP d100, Storyteller..." required>
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Year Published: *</label>
+                      <input type="number" id="field-year" class="win95-input" placeholder="e.g. 1978" min="1970" max="2026" required>
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Publisher: *</label>
+                      <input type="text" id="field-publisher" class="win95-input" placeholder="e.g. TSR Games, Chaosium, FASA..." required>
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Cover Artist: *</label>
+                      <input type="text" id="field-coverArtist" class="win95-input" placeholder="e.g. Larry Elmore, Brom, Jeff Easley..." required>
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Collector Rarity: (1 - 5)</label>
+                      <select id="field-rarity" class="win95-select">
+                        <option value="5">⭐⭐⭐⭐⭐ (5 - Holy Grail / Ultra Rare)</option>
+                        <option value="4">⭐⭐⭐⭐ (4 - Very Rare / Premium)</option>
+                        <option value="3">⭐⭐⭐ (3 - Uncommon Collector Copy)</option>
+                        <option value="2">⭐⭐ (2 - Moderate Availability)</option>
+                        <option value="1">⭐ (1 - Common Table Rulebook)</option>
+                      </select>
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Badge Ribbon Text:</label>
+                      <input type="text" id="field-badge" class="win95-input" placeholder="e.g. HOLY GRAIL, 1ST PRINT, ESSENTIAL">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- TAB 2: COLLECTION LOG & DATES -->
+                <div class="admin-tab-pane" id="tab-collection" style="display: none;">
+                  <div class="form-grid-2">
+                    <div class="admin-field-group">
+                      <label class="admin-label">Acquisition Date:</label>
+                      <input type="date" id="field-acqDate" class="win95-input">
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Last Read / Played Date:</label>
+                      <input type="date" id="field-lastPlayedDate" class="win95-input">
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Physical Condition Grade:</label>
+                      <select id="field-conditionGrade" class="win95-select">
+                        <option value="Mint in Shrink">Mint in Shrink (Factory Sealed)</option>
+                        <option value="Near Mint">Near Mint (Crisp, Collector Grade)</option>
+                        <option value="Very Good">Very Good (Light shelf wear, intact)</option>
+                        <option value="Good">Good (Well loved, minor corner dings)</option>
+                        <option value="Fair">Fair (Attic kept, reading copy)</option>
+                        <option value="Poor">Poor (Heavily worn / tape repaired)</option>
+                      </select>
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Shelf Location in Ian's Vault:</label>
+                      <input type="text" id="field-shelfLocation" class="win95-input" placeholder="e.g. Top Shelf - Left, Curio Case 1">
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Purchase Price ($):</label>
+                      <input type="text" id="field-purchasePrice" class="win95-input" placeholder="e.g. $12.00 in 1989, or $85 at flea market">
+                    </div>
+
+                    <div class="admin-field-group">
+                      <label class="admin-label">Estimated Market Value ($):</label>
+                      <input type="text" id="field-estValue" class="win95-input" placeholder="e.g. $150.00">
+                    </div>
+                  </div>
+
+                  <div class="admin-field-group" style="margin-top: 10px;">
+                    <label class="admin-label">Detailed Physical Condition &amp; Provenance Notes:</label>
+                    <textarea id="field-condition" class="win95-input" rows="2" placeholder="e.g. Near Mint (Collector Grade, 1980 6th printing, crisp gold lettering, slight spine shelf-wear)"></textarea>
+                  </div>
+                </div>
+
+                <!-- TAB 3: LORE & RULES -->
+                <div class="admin-tab-pane" id="tab-lore" style="display: none;">
+                  <div class="admin-field-group">
+                    <label class="admin-label">Description &amp; Historical Significance: *</label>
+                    <textarea id="field-description" class="win95-input" rows="4" required placeholder="Describe the book, its impact on your gaming group, art style, and why it is special..."></textarea>
+                  </div>
+
+                  <div class="admin-field-group" style="margin-top: 8px;">
+                    <label class="admin-label">Memorable Rule, Crunch, or Table:</label>
+                    <textarea id="field-memorableRule" class="win95-input" rows="2" placeholder="e.g. THAC0 calculation formula, Potion miscibility table, Wandering monster in the Abyss..."></textarea>
+                  </div>
+
+                  <div class="admin-field-group" style="margin-top: 8px;">
+                    <label class="admin-label">Favorite Quote:</label>
+                    <input type="text" id="field-favoriteQuote" class="win95-input" placeholder="e.g. 'Stop! You don't need to read this whole book to begin playing!'">
+                  </div>
+
+                  <div class="admin-field-group" style="margin-top: 8px;">
+                    <label class="admin-label">Archive Tags (comma separated):</label>
+                    <input type="text" id="field-tags" class="win95-input" placeholder="e.g. 1980s, TSR, Gygax, Hardcover, Core Rulebook">
+                  </div>
+                </div>
+
+                <!-- TAB 4: COVER IMAGE & MEDIA -->
+                <div class="admin-tab-pane" id="tab-image" style="display: none;">
+                  <div style="background: #e0e0e0; border: 1px solid #808080; padding: 10px; margin-bottom: 10px;">
+                    <strong style="color: #000080; font-size: 12px;">Cover Image Options:</strong>
+                    
+                    <div style="margin-top: 8px;">
+                      <label style="display: block; font-weight: bold; margin-bottom: 3px;">1. Upload Book Image File from Computer:</label>
+                      <input type="file" id="field-image-file" accept="image/*" class="win95-input">
+                      <p style="font-size: 10px; color: #555; margin: 2px 0 8px;">Supports JPG, PNG, GIF, WebP. Automatically stored locally in browser database.</p>
+                    </div>
+
+                    <div style="margin-top: 8px;">
+                      <label style="display: block; font-weight: bold; margin-bottom: 3px;">2. Or Enter Image URL / Web Link:</label>
+                      <input type="url" id="field-imageUrl" class="win95-input" placeholder="https://example.com/cover.jpg" style="width: 100%;">
+                    </div>
+
+                    <div style="margin-top: 8px;">
+                      <label style="display: block; font-weight: bold; margin-bottom: 3px;">3. Color Theme for Retro SVG Generation:</label>
+                      <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="color" id="field-colorTheme" value="#8b0000" style="height: 30px; width: 50px;">
+                        <span style="font-size: 11px;">Primary Theme Color</span>
+                        <input type="color" id="field-accentColor" value="#ffd700" style="height: 30px; width: 50px;">
+                        <span style="font-size: 11px;">Accent Color</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; gap: 15px; align-items: center;">
+                    <button type="button" class="win95-btn" id="btn-generate-retro-svg">
+                      🎨 Generate Retro Book Cover SVG
+                    </button>
+                    <span id="image-status-note" style="font-size: 11px; color: #008800; font-weight: bold;"></span>
+                  </div>
+                </div>
+
+                <!-- Form Bottom Action Buttons -->
+                <div class="form-button-row">
+                  <button type="submit" class="win95-btn" style="background: #000080; color: #ffffff; font-weight: bold; padding: 5px 15px;">
+                    💾 Save / Update Record
+                  </button>
+                  <button type="button" class="win95-btn" id="btn-cancel-edit">
+                    Cancel Changes
+                  </button>
+                  <button type="button" class="win95-btn" id="btn-delete-record" style="color: #990000; margin-left: auto;">
+                    🗑 Delete Tome
+                  </button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+          <!-- Live 90s Card Preview Pane -->
+          <div class="preview-panel">
+            <div class="preview-titlebar">
+              <span>👁️ LIVE GEOCITIES CARD PREVIEW</span>
+              <span style="font-size: 10px; color: #ffff00;">(What Visitors See)</span>
+            </div>
+            
+            <div class="preview-stage" id="live-card-preview">
+              <!-- Rendered live by admin.js -->
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <!-- Windows 95 Status Bar -->
+    <div class="win95-statusbar">
+      <span>Ready</span>
+      <span>TTRPG_COLLECTION.MDB</span>
+      <span>CAPS</span>
+      <span>NUM</span>
+      <span>OVR</span>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="synth.js"></script>
+  <script src="books-data.js"></script>
+  <script src="storage.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

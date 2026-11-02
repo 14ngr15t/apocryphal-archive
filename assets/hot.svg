@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 30" width="55" height="30">
+  <defs>
+    <style>
+      .hot-pulse {
+        animation: hotPulse 0.5s infinite alternate;
+        transform-origin: 27px 15px;
+      }
+      @keyframes hotPulse {
+        0% { transform: scale(0.9) rotate(-4deg); filter: drop-shadow(0 0 1px #ff0000); }
+        100% { transform: scale(1.08) rotate(4deg); filter: drop-shadow(0 0 4px #ffff00); }
+      }
+    </style>
+  </defs>
+  <g class="hot-pulse">
+    <!-- Starburst polygon -->
+    <polygon points="27,1 33,6 41,3 43,11 51,13 49,21 54,26 46,28 44,35 36,33 30,38 27,31 21,36 17,29 9,30 11,22 4,18 9,12 5,5 13,6 18,1 23,6" fill="#ff0000" stroke="#ffff00" stroke-width="1.5"/>
+    <text x="27" y="20" font-family="'Impact', 'Arial Black', sans-serif" font-size="14" font-weight="bold" fill="#ffff00" text-anchor="middle" font-style="italic">HOT!</text>
+  </g>
+</svg>

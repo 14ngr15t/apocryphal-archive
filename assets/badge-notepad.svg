@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 31" width="88" height="31">
+  <!-- Beveled 90s border -->
+  <rect x="0" y="0" width="88" height="31" fill="#c0c0c0" stroke="#ffffff" stroke-width="1"/>
+  <rect x="2" y="2" width="84" height="27" fill="#ffffff" stroke="#808080" stroke-width="1"/>
+  
+  <!-- Notepad Icon -->
+  <rect x="5" y="5" width="16" height="20" fill="#ffffea" stroke="#000080" stroke-width="1.2"/>
+  <rect x="7" y="8" width="12" height="1.5" fill="#3366cc"/>
+  <rect x="7" y="12" width="12" height="1.5" fill="#3366cc"/>
+  <rect x="7" y="16" width="12" height="1.5" fill="#3366cc"/>
+  <rect x="7" y="20" width="8" height="1.5" fill="#ff0000"/>
+
+  <text x="25" y="11" font-family="'Courier New', monospace" font-size="7" fill="#000080" font-weight="bold">HAND-CODED</text>
+  <text x="25" y="19" font-family="'Arial Black', sans-serif" font-size="8" fill="#cc0000" font-weight="900">NOTEPAD</text>
+  <text x="25" y="27" font-family="'Courier New', monospace" font-size="6.5" fill="#000000" font-weight="bold">HTML 3.2 RAW</text>
+</svg>

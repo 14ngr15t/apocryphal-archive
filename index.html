@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>~~~* Ian's 80s &amp; 90s D&amp;D and Tabletop RPG Book Shrine (Est. 1996) *~~~</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top GeoCities Homestead Header Bar -->
+  <header class="geocities-header-bar">
+    <div>
+      <strong>GeoCities</strong> | Neighborhood: <a href="#vault">SiliconValley/Lair/1983</a>
+    </div>
+    <div>
+      <a href="#vault">[Explore]</a>
+      <a href="#tools">[Dice Lair]</a>
+      <a href="#guestbook">[Sign Guestbook]</a>
+      <a href="admin.html" style="color: #00ffff; font-weight: bold;">[🔑 DM Collection Database / Admin]</a>
+      <span style="color: #ffff00; margin-left: 8px;">* Best Viewed in 800x600 *</span>
+    </div>
+  </header>
+
+  <!-- Scrolling Marquee of 90s Wisdom -->
+  <div class="marquee-container">
+    <div class="retro-marquee">
+      +++ WELCOME TRAVELER TO IAN'S TTRPG BOOK VAULT (EST. 1996) +++ THAC0 IS LIFE +++ ROLL 3d6 IN ORDER +++ BEWARE THE TARRASQUE AND RUST MONSTERS +++ NETSCAPE NAVIGATOR 3.0 RECOMMENDED +++ CHECK OUT OUR 144-PAGE DEITIES &amp; DEMIGODS WITH CTHULHU +++ REMEMBER TO SIGN THE GUESTBOOK +++ TURN OFF POP-UP BLOCKERS FOR OPTIMAL EXPERIENCE +++
+    </div>
+  </div>
+
+  <div class="shrine-container">
+
+    <!-- Hero Header Shrine -->
+    <div class="hero-header">
+      <div class="hero-title-row">
+        <!-- Animated Flame Torch Left -->
+        <img src="assets/flame-torch.svg" alt="Dungeon Torch" class="hero-torch" title="Click to receive +1 to saving throws!">
+
+        <div class="main-title-box">
+          <div style="font-size: 14px; font-family: 'Courier New', monospace; color: #00ffcc; letter-spacing: 2px;">
+            &#9884; &lt;&lt;&lt; OFFICIAL HOMEPAGE OF THE APOCRYPHAL ARCHIVE &gt;&gt;&gt; &#9884;
+          </div>
+          <h1 class="flame-text">
+            IAN'S D&amp;D &amp; RETRO RPG BOOK SHRINE
+          </h1>
+          <div class="subtitle-wordart">
+            ~~ A Tribute to 1980s &amp; 1990s TSR Dungeons &amp; Dragons and Classic RPG Tomes ~~
+          </div>
+        </div>
+
+        <!-- Animated Flame Torch Right -->
+        <img src="assets/flame-torch.svg" alt="Dungeon Torch" class="hero-torch" title="Click to receive +1 to saving throws!">
+      </div>
+
+      <!-- Animated Under Construction Sign -->
+      <div class="under-construction-banner" title="Click for DM status report!">
+        <img src="assets/under-construction.svg" alt="Under Construction Animated Barrier">
+      </div>
+
+      <!-- Retro Web Audio MIDI Synthesizer Player -->
+      <div class="midi-player-console">
+        <span style="font-weight: bold; color: #000080;">&#127925; BGM PLAYER:</span>
+        <div class="midi-screen" id="midi-track-title">
+          &#9835; LOADED: Crypt_of_the_Red_Dragon.mid (28 KB) &#9835;
+        </div>
+        <div class="midi-controls">
+          <button class="win95-btn" id="midi-play-btn" title="Toggle 90s Synthesized MIDI BGM">▶ PLAY</button>
+          <button class="win95-btn" id="midi-stop-btn" title="Stop Music">⏹ STOP</button>
+          <button class="win95-btn" id="midi-next-btn" title="Next Track">⏭ NEXT</button>
+          <label style="font-size: 10px; margin-left: 4px;">VOL:
+            <input type="range" id="midi-volume-slider" min="0" max="1" step="0.05" value="0.25" style="width: 55px; vertical-align: middle;">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Master Layout: 2 Columns (Sidebar + Main Vault) -->
+    <div class="layout-table">
+
+      <!-- Left Navigation Portal -->
+      <aside class="sidebar-portal">
+        
+        <!-- Navigation Box -->
+        <div class="portal-box">
+          <div class="portal-box-title">&#128441; PORTAL NAVIGATOR</div>
+          <ul class="nav-menu-list">
+            <li><a href="#vault" class="nav-link-btn">&#128214; Book Vault (All)</a></li>
+            <li><a href="admin.html" class="nav-link-btn" style="background: #000080; color: #ffff00;">&#128451; DM Database Admin</a></li>
+            <li><a href="#vault" class="nav-link-btn" onclick="document.querySelector('[data-filter=add1e]').click();">&#9876; AD&amp;D 1st Edition</a></li>
+            <li><a href="#vault" class="nav-link-btn" onclick="document.querySelector('[data-filter=add2e]').click();">&#128009; AD&amp;D 2e &amp; Settings</a></li>
+            <li><a href="#vault" class="nav-link-btn" onclick="document.querySelector('[data-filter=basic]').click();">&#128050; D&amp;D Basic &amp; BECMI</a></li>
+            <li><a href="#vault" class="nav-link-btn" onclick="document.querySelector('[data-filter=nontsr]').click();">&#9760; Non-TSR Legends</a></li>
+            <li><a href="#tools" class="nav-link-btn">&#127922; Dice &amp; THAC0 Lair</a></li>
+            <li><a href="#guestbook" class="nav-link-btn">&#128221; Cyber-Guestbook</a></li>
+            <li><a href="#webring" class="nav-link-btn">&#127760; RPG WebRing</a></li>
+          </ul>
+        </div>
+
+        <!-- DM Collection Database Quick Box -->
+        <div class="portal-box" style="border-color: #ffd700; background: #1a052e;">
+          <div class="portal-box-title" style="background: linear-gradient(90deg, #000080, #0066cc);">&#128451; DM DATABASE (ADMIN)</div>
+          <p style="font-size: 11px; margin: 4px 0; color: #ffff00;">Log &amp; Enter Books in Collection:</p>
+          <a href="admin.html" class="win95-btn" style="text-decoration: none; display: block; text-align: center; margin-bottom: 5px; background: #000080; color: #ffffff; font-weight: bold; padding: 4px;">
+            &#128273; Open Database Console
+          </a>
+          <a href="admin.html" class="win95-btn" style="text-decoration: none; display: block; text-align: center; font-size: 11px; padding: 3px;">
+            &#10133; Enter New Tome...
+          </a>
+        </div>
+
+        <!-- Hit Counter Box -->
+        <div class="portal-box">
+          <div class="portal-box-title">&#128202; HIT COUNTER</div>
+          <p style="font-size: 11px; margin: 4px 0; color: #00ffff;">YOU ARE VISITOR NUMBER:</p>
+          <div class="hit-counter-display" id="hit-counter">
+            <span class="counter-digit">0</span>
+            <span class="counter-digit">4</span>
+            <span class="counter-digit">2</span>
+            <span class="counter-digit">8</span>
+            <span class="counter-digit">9</span>
+            <span class="counter-digit">2</span>
+          </div>
+          <p style="font-size: 10px; color: #aaaaaa; margin-top: 4px;">Since Nov 4, 1996</p>
+        </div>
+
+        <!-- DHTML Cursor Trail Control -->
+        <div class="portal-box">
+          <div class="portal-box-title">&#10024; DHTML MAGIC</div>
+          <label style="font-size: 12px; color: #ffff00; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <input type="checkbox" id="toggle-cursor-trail" checked>
+            <span>Sparkle Cursor Trail</span>
+          </label>
+          <p style="font-size: 10px; color: #999; margin: 4px 0 0;">Warning: May tax 486 DX2-66 processors!</p>
+        </div>
+
+        <!-- Flaming Skull Mascot -->
+        <div class="portal-box">
+          <div class="portal-box-title">&#9760; GUARDIAN OF THE TOMES</div>
+          <img src="assets/flaming-skull.svg" alt="Flaming Skull" style="width: 70px; height: 70px; margin: 6px auto; display: block; cursor: pointer;" title="Beware the tomb guardian!">
+          <div style="font-size: 11px; color: #ff5555; font-style: italic;">
+            "Speak, friend, and roll for initiative."
+          </div>
+        </div>
+
+        <!-- 90s Web Badges Rack -->
+        <div class="portal-box">
+          <div class="portal-box-title">&#127942; CYBER-BADGES</div>
+          <div class="badge-rack">
+            <img src="assets/badge-netscape.svg" alt="Netscape Now 3.0 Badge" title="Netscape Navigator 3.0 Verified">
+            <img src="assets/badge-ie.svg" alt="Internet Explorer 4.0 Badge" title="Best with 800x600 256 Colors">
+            <img src="assets/badge-notepad.svg" alt="Hand Coded in Notepad" title="100% Pure Raw HTML 3.2">
+            <img src="assets/badge-award.svg" alt="CyberSurf 97 Award" title="CyberSurf Gold Award Winner 1997">
+            <img src="assets/badge-geocities.svg" alt="GeoCities Badge" title="GeoCities Area51 Vault">
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- Main Content Column -->
+      <main class="main-content-column">
+
+        <!-- Section Title: The Book Vault -->
+        <section id="vault">
+          <div class="retro-section-title">
+            <span>&#128214; THE FORBIDDEN SHELF: 1980s &amp; 1990s TTRPG TOMES</span>
+            <span class="blink" style="color: #ffff00; font-size: 14px;" id="shelf-book-count">[ 19 TOMES CATALOGED ]</span>
+          </div>
+
+          <!-- Animated Rainbow HR -->
+          <img src="assets/rainbow-bar.svg" alt="Rainbow Divider" class="rainbow-hr">
+
+          <!-- Collection Admin Quick Action Bar -->
+          <div style="display: flex; justify-content: space-between; align-items: center; background: #1f0b3b; border: 2px outset #ffd700; padding: 6px 10px; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+            <span style="font-size: 12px; color: #00ffff; font-family: 'Courier New', monospace;">
+              &#128451; <strong>COLLECTION DATABASE:</strong> Log acquisitions, dates, conditions, and custom cover images.
+            </span>
+            <a href="admin.html" class="win95-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px; background: #000080; color: #ffff00; font-size: 11px; font-weight: bold; padding: 4px 10px;">
+              &#10133; Enter / Edit Books in Admin Database &gt;&gt;
+            </a>
+          </div>
+
+          <!-- Filter & Search Controls Bar -->
+          <div class="shelf-controls-bar">
+            <div class="filter-btn-group">
+              <button class="filter-btn active" data-filter="all">&#9733; All Tomes (17)</button>
+              <button class="filter-btn" data-filter="add1e">&#9876; AD&amp;D 1st Edition</button>
+              <button class="filter-btn" data-filter="basic">&#128050; D&amp;D Basic / BECMI</button>
+              <button class="filter-btn" data-filter="add2e">&#128009; AD&amp;D 2e &amp; Settings</button>
+              <button class="filter-btn" data-filter="nontsr">&#9760; Non-TSR Legends</button>
+            </div>
+
+            <div class="retro-search-box">
+              <label for="retro-search-input" style="color: #ffff00; font-weight: bold;">Search Archive:</label>
+              <input type="text" id="retro-search-input" class="retro-input" placeholder="e.g. Gygax, Planescape, Cthulhu...">
+            </div>
+          </div>
+
+          <!-- Books Grid (Populated dynamically by script.js) -->
+          <div class="books-grid" id="books-grid">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Animated Rainbow HR -->
+        <img src="assets/rainbow-bar.svg" alt="Rainbow Divider" class="rainbow-hr" style="margin-top: 30px;">
+
+        <!-- Section 2: Interactive Dice Roller & THAC0 Calculator -->
+        <section id="tools" class="tools-panel">
+          <div class="retro-section-title" style="background: linear-gradient(90deg, #003366, #006699);">
+            <span>&#127922; THE WIZARD'S DICE TERMINAL &amp; THAC0 ENGINE</span>
+            <span class="blink" style="color: #00ffff; font-size: 13px;">[ VERIFIED JAVASCRIPT 1.1 ]</span>
+          </div>
+
+          <div class="tools-grid" style="margin-top: 15px;">
+            
+            <!-- Left Tool: Interactive Polyhedral Dice Roller -->
+            <div class="tool-box">
+              <h4 class="tool-title">&#127922; POLYHEDRAL DICE ROLLER</h4>
+              <p style="font-size: 12px; color: #ccc; margin: 0 0 8px;">
+                Select a die to cast. Natural 20s trigger critical audio fanfare!
+              </p>
+              <div class="dice-bar">
+                <button class="dice-btn" data-sides="4">d4</button>
+                <button class="dice-btn" data-sides="6">d6</button>
+                <button class="dice-btn" data-sides="8">d8</button>
+                <button class="dice-btn" data-sides="10">d10</button>
+                <button class="dice-btn" data-sides="12">d12</button>
+                <button class="dice-btn" data-sides="20" style="background: #ffff00; color: #990000; border-color: #ff0000;">d20 &#9733;</button>
+                <button class="dice-btn" data-sides="100">d100</button>
+                <button class="win95-btn" id="clear-dice-log" style="font-size: 11px; margin-left: auto;">Clear Log</button>
+              </div>
+
+              <!-- Terminal Output Screen -->
+              <div class="dice-log-screen" id="dice-log-screen">
+                &gt; Welcome to the Wizard's Dice Roller Terminal.<br>
+                &gt; Ready to roll. Click any die above!<br>
+              </div>
+            </div>
+
+            <!-- Right Tool: 3d6 In Order & THAC0 Calculator -->
+            <div class="tool-box">
+              <h4 class="tool-title">&#9876; AD&amp;D THAC0 &amp; 3d6 CHARACTER FORGE</h4>
+              
+              <!-- 3d6 in order -->
+              <div style="margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #ffff00; font-size: 12px;">Roll 3d6 In Order:</strong>
+                  <button class="win95-btn" id="roll-3d6-btn" style="font-size: 11px;">Roll Abilities</button>
+                </div>
+                <div class="stat-roll-grid">
+                  <div class="stat-badge"><div class="stat-name">STR</div><div class="stat-val" id="stat-val-str">--</div></div>
+                  <div class="stat-badge"><div class="stat-name">DEX</div><div class="stat-val" id="stat-val-dex">--</div></div>
+                  <div class="stat-badge"><div class="stat-name">CON</div><div class="stat-val" id="stat-val-con">--</div></div>
+                  <div class="stat-badge"><div class="stat-name">INT</div><div class="stat-val" id="stat-val-int">--</div></div>
+                  <div class="stat-badge"><div class="stat-name">WIS</div><div class="stat-val" id="stat-val-wis">--</div></div>
+                  <div class="stat-badge"><div class="stat-name">CHA</div><div class="stat-val" id="stat-val-cha">--</div></div>
+                </div>
+                <div id="class-recommendation" style="font-size: 11px; color: #00ffcc; margin-top: 4px;">
+                  Press "Roll Abilities" to test thy fate!
+                </div>
+              </div>
+
+              <!-- THAC0 Calculator -->
+              <div style="border-top: 1px dashed #552288; padding-top: 10px;">
+                <strong style="color: #ffff00; font-size: 12px;">Classic THAC0 Target Calculator:</strong>
+                <div style="display: flex; gap: 8px; margin-top: 6px; align-items: center; flex-wrap: wrap;">
+                  <label style="font-size: 11px;">Your THAC0:
+                    <input type="number" id="input-thac0" class="retro-input" value="18" style="width: 50px;">
+                  </label>
+                  <label style="font-size: 11px;">Target AC:
+                    <input type="number" id="input-target-ac" class="retro-input" value="4" style="width: 50px;">
+                  </label>
+                  <button class="win95-btn" id="calc-thac0-btn" style="font-size: 11px;">Calculate</button>
+                </div>
+                <div id="thac0-result-box" style="margin-top: 8px; background: #000; padding: 6px; border: 1px inset #552288;">
+                  <div style="font-size: 12px; color: #00ffff;">Formula: 18 (THAC0) - 4 (Target AC) = <strong>14</strong> needed on 1d20</div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Animated Rainbow HR -->
+        <img src="assets/rainbow-bar.svg" alt="Rainbow Divider" class="rainbow-hr" style="margin-top: 30px;">
+
+        <!-- Section 3: Interactive Cyber-Guestbook -->
+        <section id="guestbook" class="guestbook-section">
+          <div class="retro-section-title" style="background: linear-gradient(90deg, #660066, #990099);">
+            <span>&#128221; THE TRAVELER'S CYBER-GUESTBOOK</span>
+            <span style="font-size: 13px; color: #ffff00;">[ LEAVE THY MARK ]</span>
+          </div>
+
+          <div style="margin-top: 15px;">
+            <p style="font-size: 13px; color: #f0f0f0;">
+              Before thou journeyest back into the World Wide Web, carve thy name into our guestbook for all eternity!
+            </p>
+
+            <!-- Interactive Form -->
+            <div class="guestbook-form-box">
+              <form id="guestbook-form">
+                <div class="form-row">
+                  <span class="form-label">Thy Character / Nick:</span>
+                  <input type="text" id="gb-handle" class="retro-input" placeholder="e.g. Artemis_Entreri97" required>
+                </div>
+                <div class="form-row">
+                  <span class="form-label">Class &amp; Level:</span>
+                  <input type="text" id="gb-class" class="retro-input" placeholder="e.g. Level 7 Elf Mage / Thief">
+                </div>
+                <div class="form-row">
+                  <span class="form-label">Thy Inscription:</span>
+                  <textarea id="gb-msg" class="retro-input" rows="3" placeholder="Praise the collection, mention thy favorite 80s/90s module, or leave thy AOL screen name..." required></textarea>
+                </div>
+                <div style="text-align: right; margin-top: 8px;">
+                  <button type="submit" class="win95-btn" style="background: #000080; color: #ffffff; padding: 6px 16px; font-size: 13px;">
+                    &#9997; Sign the Guestbook!
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- List of Guestbook Entries -->
+            <div class="guestbook-entries-list" id="guestbook-entries">
+              <!-- Rendered by script.js -->
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+
+    <!-- WebRing & Footer Hub -->
+    <section id="webring" class="webring-box">
+      <div class="webring-title">&#127760; THE NETHERIL &amp; DRAGONLANCE WEBRING &#127760;</div>
+      <p style="font-size: 12px; color: #cccccc; margin: 0 0 10px;">
+        This site is a proud member of the <strong>Classic Tabletop RPG WebRing</strong> (Site ID: #4289).<br>
+        Navigating the decentralized web since 1996.
+      </p>
+      <div class="webring-links">
+        <a href="#vault" onclick="alert('Navigating to previous ring member: [The Forgotten Realms Cartography Guild]...'); return false;">&lt;&lt; [Prev Site]</a>
+        <span>|</span>
+        <a href="#vault" onclick="alert('Randomizing Ring... Teleported to: [Ravenloft Demiplane of Dread NetBook]!'); return false;">[Random Site]</a>
+        <span>|</span>
+        <a href="#vault" onclick="alert('WebRing directory contains 418 registered GeoCities & Angelfire RPG shrines.'); return false;">[List All]</a>
+        <span>|</span>
+        <a href="#vault" onclick="alert('Navigating to next ring member: [The Cyberpunk 2020 Night City Archive]...'); return false;">[Next Site] &gt;&gt;</a>
+      </div>
+      <div style="margin-top: 12px; font-size: 11px; color: #ffff00;">
+        Want to join the WebRing? Email: <a href="mailto:dungeon_master_ian@geocities.com" style="color: #00ffff;">dungeon_master_ian@geocities.com</a>
+      </div>
+    </section>
+
+    <!-- Footer Copyright & Vintage Easter Egg Notice -->
+    <footer class="shrine-footer">
+      <img src="assets/dragon-logo.svg" alt="Dragon Logo" style="width: 80px; height: 60px; margin: 0 auto 10px; display: block;">
+      <p style="margin: 0 0 6px;">
+        &copy; 1996-1999 <strong>Ian's Retro TTRPG Shrine</strong>. All trademarks, covers, and logos are property of TSR Inc., Wizards of the Coast, Chaosium, R. Talsorian, FASA, White Wolf, and Games Workshop.
+      </p>
+      <p style="font-size: 11px; color: #777;">
+        Crafted with love for 1980s and 1990s tabletop roleplaying history. Hand-coded with pure HTML, CSS &amp; Web Audio.<br>
+        <span style="color: #ffff00;">Protip:</span> Try typing the classic <em>Konami Code</em> (↑ ↑ ↓ ↓ ← → ← → B A) for a secret 90s gaming surprise!
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Windows 95 Tome Inspector Modal Dialog -->
+  <div class="modal-overlay" id="book-modal">
+    <div class="win95-window">
+      <!-- Titlebar -->
+      <div class="win95-titlebar">
+        <span id="modal-book-title">&#128214; Tome Properties</span>
+        <button class="win95-close-btn" id="modal-close-x" title="Close">&#10006;</button>
+      </div>
+
+      <!-- Window Body with Tabs -->
+      <div class="win95-body">
+        <div class="win95-tabs">
+          <div class="win95-tab active" data-tab="general">General</div>
+          <div class="win95-tab" data-tab="lore">Lore &amp; Impact</div>
+          <div class="win95-tab" data-tab="crunch">Rules &amp; Stat Crunch</div>
+        </div>
+
+        <div class="win95-tab-content-box">
+          <div class="win95-inset-pane" id="tab-content-general">
+            <!-- Populated by script.js -->
+          </div>
+          <div class="win95-inset-pane" id="tab-content-lore" style="display: none;">
+            <!-- Populated by script.js -->
+          </div>
+          <div class="win95-inset-pane" id="tab-content-crunch" style="display: none;">
+            <!-- Populated by script.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Button Bar -->
+      <div class="win95-bottom-bar">
+        <button class="win95-btn" id="modal-ok-btn" style="min-width: 70px;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="synth.js"></script>
+  <script src="books-data.js"></script>
+  <script src="storage.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

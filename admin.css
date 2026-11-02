@@ -1,0 +1,423 @@
+/* ==========================================================================
+   MICROSOFT ACCESS 97 & WINDOWS 95 DATABASE STYLESHEET
+   Authentic 32-bit Windows UI for the TTRPG Master Admin Console
+   ========================================================================== */
+
+body.admin-body {
+  background-color: #008080; /* Iconic Windows 95 Teal Desktop */
+  margin: 0;
+  padding: 10px;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
+  color: #000000;
+  min-height: 100vh;
+}
+
+.win95-app-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.app-titlebar {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #ffffff;
+  padding: 3px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+  user-select: none;
+}
+
+.win95-sys-btn {
+  background: #c0c0c0;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  width: 16px;
+  height: 14px;
+  line-height: 12px;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+}
+.win95-sys-btn:active {
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* Access 97 Menu Bar */
+.access-menu-bar {
+  background: #c0c0c0;
+  border-bottom: 1px solid #808080;
+  padding: 2px 6px;
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+}
+.access-menu-bar span {
+  cursor: pointer;
+  padding: 2px 4px;
+}
+.access-menu-bar span:hover {
+  background: #000080;
+  color: #ffffff;
+}
+
+/* Access 97 Toolbar */
+.access-toolbar {
+  background: #c0c0c0;
+  border-bottom: 2px groove #ffffff;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.toolbar-btn {
+  font-size: 11px;
+  padding: 3px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.toolbar-sep {
+  color: #808080;
+  margin: 0 4px;
+  font-weight: bold;
+}
+
+/* Workspace Split */
+.access-workspace {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 600px;
+  border: 2px inset #808080;
+  background: #808080;
+}
+@media (max-width: 950px) {
+  .access-workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Records Sidebar */
+.records-sidebar {
+  background: #c0c0c0;
+  border-right: 2px groove #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-header-box {
+  padding: 8px;
+  border-bottom: 1px solid #808080;
+  background: #d4d0c8;
+}
+
+.records-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 560px;
+  background: #ffffff;
+  border: 1px inset #808080;
+  margin: 4px;
+}
+
+.record-item {
+  padding: 6px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.record-item:hover {
+  background: #eef2ff;
+}
+.record-item.active {
+  background: #000080;
+  color: #ffffff;
+}
+.record-item.active .record-sub {
+  color: #ffffaa;
+}
+
+.record-thumb {
+  width: 28px;
+  height: 38px;
+  background: #000;
+  border: 1px solid #808080;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.record-thumb img, .record-thumb svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.record-title-text {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 1.2;
+}
+.record-sub {
+  font-size: 10px;
+  color: #555555;
+  margin-top: 2px;
+}
+
+/* Form Editor Container */
+.form-editor-container {
+  background: #c0c0c0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header-bar {
+  background: #d4d0c8;
+  border: 1px outset #fff;
+  padding: 4px 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-arrow-btn {
+  padding: 1px 6px;
+  font-size: 10px;
+}
+
+/* Split: Form vs Live Preview */
+.form-preview-split {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 12px;
+  align-items: start;
+}
+@media (max-width: 1150px) {
+  .form-preview-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Win95 Form Inputs */
+.win95-input, .win95-select {
+  border-top: 2px solid #000000;
+  border-left: 2px solid #000000;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-size: 12px;
+  padding: 3px 5px;
+  box-sizing: border-box;
+}
+.win95-input:focus, .win95-select:focus {
+  outline: none;
+  background: #ffffe8;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+@media (max-width: 600px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admin-field-group {
+  display: flex;
+  flex-direction: column;
+}
+.admin-label {
+  font-weight: bold;
+  margin-bottom: 2px;
+  font-size: 11px;
+}
+
+.form-button-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #808080;
+  align-items: center;
+}
+
+/* Live Preview Panel */
+.preview-panel {
+  background: #140526;
+  border: 3px outset #ffd700;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-titlebar {
+  background: linear-gradient(90deg, #ff0055, #8800cc);
+  color: #ffffff;
+  font-family: 'Impact', sans-serif;
+  font-size: 13px;
+  padding: 4px 8px;
+  margin: -10px -10px 10px -10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffd700;
+}
+
+.preview-stage {
+  min-height: 380px;
+}
+
+/* Windows 95 Status Bar */
+.win95-statusbar {
+  background: #c0c0c0;
+  border-top: 1px solid #ffffff;
+  padding: 3px 6px;
+  display: flex;
+  gap: 4px;
+}
+.win95-statusbar span {
+  border: 1px inset #808080;
+  padding: 2px 6px;
+  font-size: 10px;
+  color: #000;
+}
+.win95-statusbar span:first-child {
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   Windows 95 Logon Dialog Overlay (Password Protected)
+   ========================================================================== */
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #008080; /* Classic Windows 95 Desktop Teal */
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-window {
+  width: 440px;
+  max-width: 95vw;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.login-dialog-body {
+  padding: 16px;
+}
+
+.login-banner-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #808080;
+}
+
+.login-key-icon {
+  font-size: 34px;
+  filter: drop-shadow(2px 2px 0px #ffffff);
+}
+
+.login-instruction-text {
+  font-size: 12px;
+  line-height: 1.35;
+  color: #000000;
+}
+
+.login-fields-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-field-row {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.login-label {
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.login-input {
+  width: 100%;
+}
+
+.login-error-alert {
+  background: #ffe6e6;
+  border: 1px solid #cc0000;
+  color: #990000;
+  padding: 6px 10px;
+  margin-top: 10px;
+  font-size: 11px;
+  border-radius: 1px;
+  animation: errorShake 0.3s ease-in-out;
+}
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.login-button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #ffffff;
+}
+
+.login-btn {
+  min-width: 75px;
+  padding: 4px 12px;
+  font-size: 12px;
+}

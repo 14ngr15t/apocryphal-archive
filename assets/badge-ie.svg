@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 31" width="88" height="31">
+  <defs>
+    <linearGradient id="ieGrad" x1="0" y1="0" x2="0" y2="100%">
+      <stop offset="0%" stop-color="#003399"/>
+      <stop offset="100%" stop-color="#001144"/>
+    </linearGradient>
+  </defs>
+  <!-- Beveled 90s border -->
+  <rect x="0" y="0" width="88" height="31" fill="#c0c0c0"/>
+  <rect x="1" y="1" width="86" height="29" fill="url(#ieGrad)"/>
+  
+  <!-- 'e' logo -->
+  <text x="14" y="24" font-family="'Georgia', serif" font-style="italic" font-size="24" font-weight="bold" fill="#3399ff">e</text>
+  
+  <text x="26" y="10" font-family="'Small Fonts', 'MS Sans Serif', Arial, sans-serif" font-size="6" fill="#ffff00" font-weight="bold">BEST VIEWED WITH</text>
+  <text x="26" y="19" font-family="'Arial Black', sans-serif" font-size="8" fill="#ffffff" font-weight="bold">MS Internet</text>
+  <text x="26" y="27" font-family="'Courier New', monospace" font-size="7" fill="#00ffcc" font-weight="bold">Explorer 4.0</text>
+</svg>

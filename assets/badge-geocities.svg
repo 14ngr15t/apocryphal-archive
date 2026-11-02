@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 32" width="110" height="32">
+  <rect x="1" y="1" width="108" height="30" fill="#000" stroke="#00ffff" stroke-width="1.5"/>
+  <rect x="3" y="3" width="104" height="26" fill="#0b2447"/>
+  <text x="55" y="13" font-family="'Impact', Arial, sans-serif" font-size="9" fill="#ffff00" text-anchor="middle" letter-spacing="1">GeoCities</text>
+  <text x="55" y="24" font-family="'Courier New', monospace" font-size="7.5" fill="#00ffff" text-anchor="middle">Area51 / Vault / 1983</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 70" width="350" height="70">
+  <defs>
+    <pattern id="hazard" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="20" fill="#ffcc00"/>
+      <rect x="10" width="10" height="20" fill="#111111"/>
+    </pattern>
+    <style>
+      .blink-light { animation: lightBlink 0.6s infinite alternate; }
+      .hazard-bar { border: 2px solid #000; }
+      .worker { animation: digMove 1s infinite alternate ease-in-out; transform-origin: 30px 45px; }
+      @keyframes lightBlink {
+        0% { fill: #ff3300; filter: drop-shadow(0 0 1px #ff0000); }
+        100% { fill: #ffff00; filter: drop-shadow(0 0 8px #ffff00); }
+      }
+      @keyframes digMove {
+        0% { transform: rotate(-5deg); }
+        100% { transform: rotate(15deg); }
+      }
+    </style>
+  </defs>
+  <!-- Background border plate -->
+  <rect x="2" y="2" width="346" height="66" fill="#222" stroke="#c0c0c0" stroke-width="2" rx="4"/>
+  <rect x="6" y="6" width="338" height="58" fill="#000"/>
+  
+  <!-- Hazard stripe bars -->
+  <rect x="10" y="8" width="330" height="12" fill="url(#hazard)" stroke="#555"/>
+  <rect x="10" y="50" width="330" height="12" fill="url(#hazard)" stroke="#555"/>
+  
+  <!-- Flashing Warning Lights -->
+  <circle cx="20" cy="14" r="5" class="blink-light"/>
+  <circle cx="330" cy="14" r="5" class="blink-light"/>
+  <circle cx="20" cy="56" r="5" class="blink-light" style="animation-delay: 0.3s;"/>
+  <circle cx="330" cy="56" r="5" class="blink-light" style="animation-delay: 0.3s;"/>
+
+  <!-- Center Text -->
+  <g>
+    <text x="175" y="32" font-family="'Courier New', monospace, sans-serif" font-weight="900" font-size="15" fill="#ffff00" text-anchor="middle" letter-spacing="2">
+      &#9888; UNDER CONSTRUCTION &#9888;
+    </text>
+    <text x="175" y="45" font-family="'Times New Roman', serif" font-weight="bold" font-size="11" fill="#00ffff" text-anchor="middle">
+      * PARDON OUR DUST - 28.8K MODEM FRIENDLY *
+    </text>
+  </g>
+</svg>

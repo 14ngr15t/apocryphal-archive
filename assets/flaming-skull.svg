@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <style>
+      .fire-back { animation: skullFire 0.4s infinite alternate ease-in-out; transform-origin: 40px 50px; }
+      .eye-glow { animation: eyePulse 0.8s infinite alternate; }
+      @keyframes skullFire {
+        0% { transform: scale(0.96, 1) rotate(-3deg); fill: #ff1100; }
+        50% { fill: #ff6600; }
+        100% { transform: scale(1.04, 1.08) rotate(3deg); fill: #ffaa00; }
+      }
+      @keyframes eyePulse {
+        0% { fill: #ff0000; filter: drop-shadow(0 0 2px #ff0000); }
+        100% { fill: #ffff00; filter: drop-shadow(0 0 8px #ff0000); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Fire -->
+  <path class="fire-back" d="M40 5 C25 20 10 35 15 55 C20 70 30 75 40 75 C50 75 60 70 65 55 C70 35 55 20 40 5 Z"/>
+
+  <!-- Inner Fire -->
+  <path class="fire-back" style="animation-delay: 0.2s;" d="M40 18 C30 28 20 40 24 55 C28 65 35 68 40 68 C45 68 52 65 56 55 C60 40 50 28 40 18 Z" fill="#ffff00"/>
+
+  <!-- Skull Head -->
+  <path d="M26 38 C26 26 32 24 40 24 C48 24 54 26 54 38 C54 46 51 49 51 52 C51 55 49 56 46 56 L34 56 C31 56 29 55 29 52 C29 49 26 46 26 38 Z" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Jaw / Teeth -->
+  <rect x="33" y="56" width="14" height="8" fill="#d0d0d0" stroke="#333" stroke-width="1"/>
+  <!-- Teeth lines -->
+  <line x1="36" y1="56" x2="36" y2="64" stroke="#222" stroke-width="1"/>
+  <line x1="40" y1="56" x2="40" y2="64" stroke="#222" stroke-width="1"/>
+  <line x1="44" y1="56" x2="44" y2="64" stroke="#222" stroke-width="1"/>
+  <line x1="33" y1="60" x2="47" y2="60" stroke="#222" stroke-width="0.8"/>
+
+  <!-- Eye Sockets with glowing pupils -->
+  <ellipse cx="34" cy="39" rx="4.5" ry="5.5" fill="#111"/>
+  <ellipse cx="46" cy="39" rx="4.5" ry="5.5" fill="#111"/>
+  <!-- Glowing eye dots -->
+  <circle cx="34" cy="39" r="2.2" class="eye-glow"/>
+  <circle cx="46" cy="39" r="2.2" class="eye-glow"/>
+
+  <!-- Nasal cavity -->
+  <polygon points="40,45 38,49 42,49" fill="#111"/>
+
+  <!-- Cheekbone shadows -->
+  <path d="M27 45 C30 46 31 49 32 52" stroke="#999" stroke-width="1" fill="none"/>
+  <path d="M53 45 C50 46 49 49 48 52" stroke="#999" stroke-width="1" fill="none"/>
+</svg>

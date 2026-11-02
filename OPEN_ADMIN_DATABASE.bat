@@ -1,0 +1,3 @@
+@echo off
+echo Starting Ian's TTRPG Collection Database (Microsoft Access 97 Style)...
+start "" "%~dp0admin.html"

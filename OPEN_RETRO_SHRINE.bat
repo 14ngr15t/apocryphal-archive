@@ -1,0 +1,3 @@
+@echo off
+echo Starting Ian's 90s D&D and Tabletop RPG Shrine...
+start "" "%~dp0index.html"
